@@ -1,0 +1,42 @@
+body {
+  direction: rtl; /* כתיבה מימין לשמאל */
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  text-align: center;
+}
+
+#quiz-container {
+  background: #fff;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#question {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+#answer {
+  margin-top: 10px;
+  color: #005500;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  margin: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  background-color: #ddd;
+}
