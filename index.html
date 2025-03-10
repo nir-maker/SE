@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html lang="he">
 <head>
-  <meta charset="UTF-8" />
-  <title>משחק שאלות במדעים</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>משחק שאלות למדעים</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <h1>משחק שאלות</h1>
-  <div id="quiz-container">
-    <div id="question"></div>
-    <div id="answer" class="hidden"></div>
-    <button id="show-answer-btn" class="btn">הצג תשובה</button>
-    <button id="next-question-btn" class="btn">שאלה הבאה</button>
+  <h1>משחק שאלות למדעים</h1>
+  <!-- תצוגת ניקוד והתקדמות -->
+  <div id="score-container">
+    <span id="score">ניקוד: 0</span> |
+    <span id="progress">התקדמות: 0/0</span>
   </div>
-
+  
+  <!-- אזור המשחק -->
+  <div id="quiz-container" class="animate">
+    <div id="question"></div>
+    <!-- אזור להצגת אפשרויות לבחירה (רב-ברירה, נכון/לא נכון) -->
+    <div id="options"></div>
+    <!-- אזור לשאלות השלמת משפט -->
+    <div id="fillin-container" class="hidden">
+      <input type="text" id="fillin-answer" placeholder="הכנס/י תשובה">
+      <button id="submit-fillin" class="btn">שלח תשובה</button>
+    </div>
+    <!-- אזור פידבק מיידי -->
+    <div id="feedback"></div>
+    <!-- כפתורים -->
+    <button id="submit-answer-btn" class="btn hidden">בדוק תשובה</button>
+    <button id="next-question-btn" class="btn hidden">שאלה הבאה</button>
+  </div>
+  
+  <hr>
+  <!-- טופס להוספת שאלה חדשה (מעודכן כך שניתן להוסיף שאלות מסוגים שונים) -->
+  <h2>הוסף שאלה חדשה</h2>
+  <form id="add-question-form">
+    <label>סוג שאלה:</label>
+    <select id="question-type">
+      <option value="multiple">רב-ברירה</option>
+      <option value="truefalse">נכון או לא נכון</option>
+      <option value="fillin">השלמת משפט</option>
+    </select><br>
+    <label>רמת קושי:</label>
+    <select id="question-difficulty">
+      <option value="קל">קל</option>
+      <option value="בינוני">בינוני</option>
+      <option value="קשה">קשה</option>
+    </select><br>
+    <label>נושא:</label>
+    <input type="text" id="question-topic" placeholder="למשל: סלעים"><br>
+    <label>שאלה:</label>
+    <input type="text" id="new-question" required><br>
+    <label>תשובה נכונה:</label>
+    <input type="text" id="new-answer" required><br>
+    <!-- שדה לבחירה נוספת, רלוונטי רק לשאלות רב-ברירה -->
+    <div id="multiple-options-container">
+      <label>אפשרויות נוספות (מופרדות בפסיק):</label>
+      <input type="text" id="new-choices" placeholder="לדוגמה: אפשרות א, אפשרות ב"><br>
+    </div>
+    <button type="submit" class="btn">הוסף שאלה</button>
+  </form>
+  
   <script src="script.js"></script>
 </body>
 </html>
