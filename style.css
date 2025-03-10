@@ -1,21 +1,37 @@
 body {
-  direction: rtl; /* כתיבה מימין לשמאל */
+  direction: rtl;
   font-family: Arial, sans-serif;
   margin: 20px;
   background-color: #f0f0f0;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
+}
+
+#score-container {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.1em;
 }
 
 #quiz-container {
   background: #fff;
   padding: 20px;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+#quiz-container.animate {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 #question {
@@ -23,9 +39,25 @@ h1 {
   margin-bottom: 15px;
 }
 
-#answer {
-  margin-top: 10px;
-  color: #005500;
+#options {
+  margin-bottom: 15px;
+}
+
+.option {
+  margin: 5px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #e0e0e0;
+}
+
+#feedback {
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .hidden {
@@ -39,4 +71,20 @@ h1 {
   border: none;
   border-radius: 3px;
   background-color: #ddd;
+}
+
+form {
+  background: #fff;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input, form select {
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
